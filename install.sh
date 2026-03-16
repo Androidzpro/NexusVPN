@@ -1079,19 +1079,36 @@ menu_servicios() {
 #  MENÚ PRINCIPAL
 # ════════════════════════════════════════════════════════════
 main_menu() {
-    # Si no está activado, pedir key primero
+    # ── Contraseña de admin (solo la sabe el dueño del script) ──
+    ADMIN_PASS="nexusadmin2024"
+
     if ! check_server_activated; then
         clear
         echo -e "${B}${BOLD}"
         echo "  ╔══════════════════════════════════════════════════════╗"
-        echo "  ║         NexusVPN Pro - ACTIVACIÓN REQUERIDA         ║"
+        echo "  ║              NexusVPN Pro - ACCESO                  ║"
         echo "  ╚══════════════════════════════════════════════════════╝"
         echo -e "${NC}"
-        echo -e "  ${Y}Este servidor necesita una KEY de licencia para funcionar.${NC}"
-        echo -e "  ${C}Contacta al proveedor para obtener tu key.${NC}\n"
-        read -p "  Ingresa tu KEY de licencia: " key
-        activate_server "$key"
-        check_server_activated || { err "Key inválida. Saliendo."; exit 1; }
+        echo -e "  ${C}Ingresa tu KEY de licencia o password de admin:${NC}\n"
+        read -sp "  KEY / Password: " input
+        echo ""
+
+        if [[ "$input" == "$ADMIN_PASS" ]]; then
+            # Admin — acceso ilimitado
+            mkdir -p "$PANEL_DIR"
+            EXPIRY="2099-12-31 23:59:59"
+            echo "ADMIN|${EXPIRY}" > "$SERVER_KEY_FILE"
+            ok "Bienvenido Admin"
+            sleep 1
+        else
+            # Intentar como key de cliente
+            activate_server "$input"
+            check_server_activated || {
+                err "Key inválida o expirada."
+                sleep 2
+                exit 1
+            }
+        fi
     fi
 
     while true; do
@@ -1153,4 +1170,3 @@ case "$1" in
         main_menu
         ;;
 esac
-
