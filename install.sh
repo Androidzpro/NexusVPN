@@ -7,7 +7,7 @@
 
 set -e
 
-REPO_URL="https://raw.githubusercontent.com/TU_USUARIO/vpn-panel/main"
+REPO_URL="https://raw.githubusercontent.com/Androidzpro/NexusVPN/main"
 PANEL_DIR="/etc/vpn-panel"
 BIN_DIR="/usr/local/bin/vpn-panel"
 VERSION="2.0.0"
