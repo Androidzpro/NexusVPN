@@ -13,7 +13,14 @@
 # ═══════════════════════════════════════════════════════════════════
 
 set -euo pipefail
+# OVERRIDE DE FUNCIONES PROBLEMÁTICAS
+progress_bar() {
+    local msg="$1"
+    echo -e "${C}  ➜  ${NC}$msg"
+}
 
+# Forzar output inmediato
+exec 5>&1
 # ──────────────────────────────────────────────────────────────────
 # CONSTANTES GLOBALES
 # ──────────────────────────────────────────────────────────────────
