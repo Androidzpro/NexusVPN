@@ -1,54 +1,66 @@
-# NexusVPN Pro v3.0
+# 🚀 NexusVPN Pro v3.0
 
-Panel VPN **todo-en-uno premium** para servidores Linux  
-Compatible con **Ubuntu 20.04 / 22.04** y **Debian 11** (x86_64 y ARM64)
+<p align="center">
+  <img src="https://img.shields.io/badge/Version-3.0-blue.svg">
+  <img src="https://img.shields.io/badge/Ubuntu-20.04%2B-orange.svg">
+  <img src="https://img.shields.io/badge/Debian-10%2B-red.svg">
+  <img src="https://img.shields.io/badge/Licencia-MIT-green.svg">
+</p>
 
-![NexusVPN Banner](https://via.placeholder.com/900x300/0a2540/00d4ff?text=NexusVPN+Pro+v3.0)  
-*(Banner promocional – puedes reemplazarlo con tu imagen real)*
+<p align="center">
+  <b>Panel de gestión VPN premium con múltiples protocolos</b><br>
+  WhatsApp: <a href="https://wa.me/573004430431">3004430431</a> | 
+  Telegram: <a href="https://t.me/ANDRESCAMP13">@ANDRESCAMP13</a>
+</p>
 
-## Características destacadas
+---
 
-- Instalación **silenciosa y automática** en un solo archivo
-- Sistema avanzado de **licencias con keys** (formato: `NEXUS-XXXX-XXXX-XXXX-XXXX`)
-- **15 protocolos** / herramientas VPN integradas y funcionales
-- Menú principal **premium** con **15 opciones** avanzadas
-- Gestión completa de usuarios **SSH**, **Xray/V2Ray**, **Hysteria2**, **SlowDNS**, **BadVPN**, **UDP Custom**
-- Configuración automática de **dominio + Cloudflare + SSL** (Let's Encrypt)
-- Banners publicitarios y **MOTD SSH** editables desde el panel
-- Estadísticas detalladas en tiempo real (RAM, CPU, tráfico, usuarios conectados, GB consumidos…)
-- Generador de **QR codes** compatible con V2RayNG, NapsternetV, Shadowrocket, etc.
-- Backup / Restore completo del panel y usuarios
-- Firewall **UFW** integrado y gestionable
-- Logs de acceso y seguridad reforzada
+## ✨ **CARACTERÍSTICAS PRINCIPALES**
 
-### Protocolos y puertos por defecto
+### 📡 **Protocolos Soportados**
+| Protocolo | Puerto | Descripción |
+|-----------|--------|-------------|
+| **VLESS TCP** | 443 | V2Ray/Xray protocolo principal |
+| **VLESS gRPC** | 443 | Transporte gRPC |
+| **VMess WebSocket** | 80, 8080 | Path: /nexus |
+| **VMess mKCP** | 1194 UDP | Seed: "nexusvpn" |
+| **Trojan** | 2083 TCP | TLS implícito |
+| **Shadowsocks** | 8388 TCP | chacha20-ietf-poly1305 |
+| **Hysteria2** | 36712 UDP | Obfs: salamander |
+| **SlowDNS** | 5300 UDP | DNS tunneling |
+| **BadVPN** | 7100-7300 UDP | UDP Gateway |
+| **SSH** | 22 TCP | Con banner personalizado |
 
-| Protocolo              | Puerto(s)          | Notas / Características                          |
-|------------------------|--------------------|--------------------------------------------------|
-| VLESS TCP TLS          | 443                | TLS + certificado Let's Encrypt                  |
-| VMess WebSocket        | 80, 8080           | path: `/nexus`                                   |
-| VMess mKCP             | 1194 UDP           | seed: `nexusvpn`                                 |
-| Trojan TLS             | 2083               | TLS                                              |
-| Shadowsocks            | 8388               | método: chacha20-ietf-poly1305                   |
-| VLESS gRPC             | 443                | serviceName: `nexus`                             |
-| Hysteria2              | 36712 UDP          | obfuscation: salamander                          |
-| SlowDNS (dnstt-server) | 5300 UDP           | DNS over HTTPS tunneling                         |
-| SSH                    | 22                 | límite de conexiones + expiración                |
-| BadVPN UDP-GW          | 7100–7300          | múltiples puertos                                |
-| UDP Custom (socat)     | configurable       | redirección UDP avanzada                         |
-| OpenVPN                | 1194 TCP/UDP       | opcional (activar manualmente si se necesita)    |
+### 🔥 **Características del Panel**
+- ✅ Sistema de licencias con expiración
+- ✅ Gestión completa de usuarios
+- ✅ Estadísticas en tiempo real
+- ✅ Firewall integrado (UFW)
+- ✅ Banner personalizable
+- ✅ Backup y restauración
+- ✅ Generador de QR
+- ✅ Interfaz visual premium
+- ✅ Soporte multi-arquitectura (x86_64/ARM64)
 
-## Requisitos mínimos
+---
 
-- Sistema operativo: **Ubuntu 20.04 / 22.04** o **Debian 11**
-- Arquitectura: **x86_64** o **ARM64**
-- RAM: ≥ **1 GB** (recomendado 2 GB+)
-- Disco: ≥ **10 GB** libre
-- Acceso **root**
-- Puerto **22** abierto (SSH inicial)
+## 📦 **REQUISITOS DEL SISTEMA**
 
-## Instalación (método recomendado 2025–2026)
+### Mínimos:
+- Ubuntu 20.04/22.04 o Debian 10/11
+- 512 MB RAM
+- 5 GB disco
+- Root access
 
+### Recomendados:
+- 1 GB RAM
+- 10 GB SSD
+- IPv4 pública
+
+---
+
+## 🚀 **INSTALACIÓN RÁPIDA**
+
+### 1. Conectarse al servidor
 ```bash
-# Actualiza paquetes básicos e instala curl + wget si no están
-sudo apt update -y && sudo apt install -y curl wget
+ssh root@tu-servidor
