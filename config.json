@@ -1,0 +1,65 @@
+{
+  "version": "4.0",
+  "name": "NexusVPN Pro",
+  "install_date": "2026-03-17 21:36:24",
+  "last_update": "2026-03-17 21:36:24",
+  "server": {
+    "ip": "0.0.0.0",
+    "private_ip": "172.31.44.31",
+    "hostname": "ip-172-31-44-31",
+    "os": "Ubuntu 22.04.5 LTS",
+    "kernel": "6.8.0-1050-aws"
+  },
+  "ports": {
+    "ssh": 22,
+    "xray_vless_tcp": 443,
+    "xray_vless_grpc": 8443,
+    "xray_vmess_ws": 80,
+    "xray_vmess_ws_alt": 8080,
+    "xray_vmess_mkcp": 1194,
+    "xray_trojan": 2083,
+    "xray_shadowsocks": 8388,
+    "hysteria2": 36712,
+    "wireguard": 51820,
+    "ikev2": 500,
+    "openvpn_tcp": 1194,
+    "openvpn_udp": 1195,
+    "slowdns": 5300,
+    "webpanel": 8080
+  },
+  "paths": {
+    "vmess": "/nexus",
+    "grpc": "nexus-grpc"
+  },
+  "security": {
+    "admin_pass_changed": false,
+    "ssh_banner_enabled": true,
+    "firewall_enabled": true,
+    "fail2ban_enabled": true,
+    "auto_updates": false
+  },
+  "features": {
+    "telegram_bot": false,
+    "web_panel": false,
+    "monitoring": true,
+    "traffic_control": true,
+    "speed_limiting": false
+  },
+  "license": {
+    "active": false,
+    "key": "",
+    "expiry": 0,
+    "max_users": 0,
+    "max_traffic": 0
+  },
+  "telegram": {
+    "enabled": false,
+    "token": "",
+    "chat_id": ""
+  },
+  "database": {
+    "users": "/etc/NexusVPN/database/users.db",
+    "keys": "/etc/NexusVPN/database/keys.db",
+    "traffic": "/etc/NexusVPN/database/traffic.db"
+  }
+}
