@@ -1,0 +1,62 @@
+# Archivos temporales del sistema
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración sensibles (NO subir)
+/etc/NexusVPN/keys.db
+/etc/NexusVPN/users.db
+/etc/NexusVPN/config.json
+/etc/NexusVPN/telegram.conf
+/etc/NexusVPN/bot.token
+/etc/NexusVPN/*.key
+/etc/NexusVPN/*.pem
+/etc/NexusVPN/*.crt
+
+# Archivos de backup
+*.tar.gz
+*.tar.bz2
+*.zip
+*.rar
+backups/
+*.old
+*.bak
+
+# Directorios de módulos (si se generan localmente)
+modules/*.sh
+!modules/example.sh
+
+# Logs del sistema
+/var/log/nexusvpn/
+*.log
+
+# Archivos de entorno
+.env
+.env.local
+.env.production
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Archivos de compilación
+*.o
+*.so
+*.dll
+*.exe
+
+# No ignorar archivos importantes
+!install.sh
+!README.md
+!LICENSE
+!CHANGELOG.md
+!banner.txt
+!ports.conf
+!keys.db.example
+!uninstall.sh
